@@ -1,0 +1,4 @@
+
+-e ./packages/core
+-e ./packages/encode[video]
+

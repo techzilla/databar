@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "databar-encode"
+version = "0.1.0"
+description = "databar sender: show a file on screen as a stream of colour barcodes"
+requires-python = ">=3.10"
+dependencies = ["databar-core==0.1.0", "pyglet>=2.0"]
+
+[project.optional-dependencies]
+video = ["opencv-python>=4.7"]     # only for writing lossless video files
+
+[project.scripts]
+databar-encode = "databar.encode.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["databar.encode*"]
+namespaces = true
